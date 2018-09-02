@@ -41,3 +41,21 @@ Node.prototype.Visit = function() {
     this.right.Visit()
   }
 }
+
+Node.prototype.Search = function(val) {
+  if (val === this.value) {
+    return this
+    // console.log('Found ', val)
+  } else
+
+  if (val < this.value && this.left) {
+    return this.left.Search(val)
+  } else
+
+  if (val > this.value && this.right) {
+    return this.right.Search(val)
+  } else {
+    return null
+    // console.log('Value not found: ', val)
+  }
+}

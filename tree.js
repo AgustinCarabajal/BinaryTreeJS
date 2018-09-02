@@ -21,3 +21,7 @@ Tree.prototype.Traverse = function() {
   this.root.Visit()
 }
 
+// Search a single value in the Tree
+Tree.prototype.Search = function(val) {
+  return this.root.Search(val)
+}

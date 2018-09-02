@@ -13,4 +13,10 @@ function setup() {
 
     // Visiting all nodes
     tree.Traverse()
+
+    // Search for number 1
+    var res = tree.Search(1)
+    if (res) {
+        console.log(res)
+    }
 }
