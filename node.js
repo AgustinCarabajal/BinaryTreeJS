@@ -17,7 +17,7 @@ Node.prototype.AddNode = function(n) {
     if (!this.right) {
       this.right = n
       this.right.x = this.x + 50
-      this.right.y = this.y + 20
+      this.right.y = this.y + 50
     } else {
       this.right.AddNode(n)
     }
@@ -27,7 +27,7 @@ Node.prototype.AddNode = function(n) {
     if (!this.left) {
       this.left = n
       this.left.x = this.x - 50
-      this.left.y = this.y + 20
+      this.left.y = this.y + 50
     } else {
       this.left.AddNode(n)
     }
@@ -44,9 +44,13 @@ Node.prototype.Visit = function(parent) {
   console.log(this.value)
   fill(255)
   noStroke()
+  textAlign(CENTER)
   text(this.value, this.x, this.y)
   stroke(255)
-  line(parent.x, parent.y, this.x, this.y)
+  noFill()
+  ellipse(this.x, this.y, 25, 25)
+  if (parent.x != this.x)
+    line(parent.x, parent.y + 15, this.x, this.y - 15)
 
   if (this.right) {
     this.right.Visit(this)
