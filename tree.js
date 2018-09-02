@@ -11,6 +11,8 @@ Tree.prototype.AddValue = function (val) {
 
   if (!this.root) {
     this.root = node
+    this.root.x = width / 2
+    this.root.y = 20
   } else {
     this.root.AddNode(node)
   }
@@ -18,7 +20,7 @@ Tree.prototype.AddValue = function (val) {
 
 // Visit all Nodes
 Tree.prototype.Traverse = function() {
-  this.root.Visit()
+  this.root.Visit(this.root)
 }
 
 // Search a single value in the Tree

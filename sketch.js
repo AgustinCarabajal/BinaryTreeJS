@@ -2,6 +2,9 @@
 
 function setup() {
 
+    createCanvas(600, 400)
+    background(50)
+
     let tree = new Tree()
     
     // Add 10 random values to the Tree struct
